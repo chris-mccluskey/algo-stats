@@ -11,6 +11,9 @@ requests = "*"
 pandas = "*"
 openpyxl = "*"
 xlsxwriter = "*"
+gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
