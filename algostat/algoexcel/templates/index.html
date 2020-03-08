@@ -33,12 +33,12 @@
       }
       #manipulate {
       position:absolute;
-      width:300px;
-      height:300px;
+      width:700px;
+      height:100px;
       bottom:0px;
       right:25%;
       left:50%;
-      margin-left:-150px;
+      margin-left:-300px;
       }
 
     </style>
@@ -51,14 +51,13 @@
 
     <main role="main" class="container">
       <div class="starter-template">
-        <h1 style="text-align: center;">Algorand Doc Creator</h1>
+        <h1 style="text-align: center;">Algorand Doc Creator</h1><br/></li>
 
   <form action="{% url 'index' %}" method='POST'>
     {% csrf_token %}
 
-    <p class="lead">Enter an Algorand mainnet address then click "Download Excel File"<br />
-    The file will contain separate sheets for all inbound and outbound transactions per year
-    </p>
+    <ul>Enter an Algorand mainnet address then click "Download Excel File".</ul>
+    <ul>The file will contain separate sheets for all inbound and outbound transactions per year.</ul><br/></li>
 
     <!-- Address -->
     <div class="form-group">
@@ -71,7 +70,7 @@
 
     <button type="submit" class="btn btn-secondary btn-lg btn-block">Download Excel File</button>
    </form>
-
+  </div>
 
 
   <div id="manipulate">
@@ -117,16 +116,7 @@
 
    </div>
    </div>
-
-
-
    </div>
-</div>
-
-
-
-
-      </div>
     </main>
   </body>
 </html>
