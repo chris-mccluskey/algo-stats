@@ -5,7 +5,6 @@ import pandas as pd
 from pandas.io.json import json_normalize
 from io import BytesIO as IO
 
-# Create your views here.
 def index(request):
 
     if request.method == 'GET':
@@ -71,7 +70,6 @@ def index(request):
             inbound_2020 = algo_df[(algo_df['timestamp'].dt.year == 2020) & (algo_df['to'] == f"{address}")].reset_index(drop=True)
             outbound_2020 = algo_df[(algo_df['timestamp'].dt.year == 2020) & (algo_df['to'] != f"{address}")].reset_index(drop=True)
 
-
             with pd.ExcelWriter(response, engine='xlsxwriter') as writer:
                 inbound_2019.to_excel(writer, sheet_name='2019-RECEIVE')
                 outbound_2019.to_excel(writer, sheet_name='2019-SEND')
@@ -79,9 +77,6 @@ def index(request):
                 outbound_2020.to_excel(writer, sheet_name='2020-SEND')
 
                 return response
-
-
-
 
         print('algo initiated')
         return algo(request.POST.get('address'))

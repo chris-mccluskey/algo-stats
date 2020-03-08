@@ -40,12 +40,13 @@
 
   <form action="{% url 'index' %}" method='POST'>
     {% csrf_token %}
-    <p class="lead">Enter an Algorand address:</p>
+    <p class="lead">Enter an Algorand mainnet address then click "Download Excel File"<br />
+    The file will contain seperate sheets for all inbound and outbound transactions per year.
+    </p>
 
     <!-- Address -->
     <div class="form-group">
-      <label for="address"><b>Address</b></label>
-      <input type="text" class="form-control {% if errors.address %}is-invalid{% endif %}" id="address" name="address">
+      <input type="text" class="form-control {% if errors.address %}is-invalid{% endif %}" id="address", placeholder="Algorand address" name="address">
       {% if errors.name %}
         <p style="color: #dc3545">{{errors.address}}</p>
       {% endif %}
@@ -53,7 +54,8 @@
 
 
     <button type="submit" class="btn btn-primary float-right">Download Excel File</button>
-  </form>
+   </form>
+
 
       </div>
     </main>
