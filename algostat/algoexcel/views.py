@@ -34,7 +34,7 @@ def index(request):
             # GET account info
             url_1 = f'https://api.algoexplorer.io/v1/account/{address}'
             account = requests.get(url_1)
-            num_of_tx = account.json()['numTxs']
+            num_of_tx = account.json()['numbertransactions']
 
             # Create DataFrame
             algo_df = pd.DataFrame()
